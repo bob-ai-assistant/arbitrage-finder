@@ -24,7 +24,7 @@ describe("RateLimiter", () => {
     expect(elapsed).toBeLessThan(50);
   });
 
-  it("should construct with correct parameters", () => {
+  it("should construct with correct parameters", async () => {
     const limiter = new RateLimiter(30);
     // Can acquire immediately (has tokens)
     await expect(limiter.acquire()).resolves.toBeUndefined();
